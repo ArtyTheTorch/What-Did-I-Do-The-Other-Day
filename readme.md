@@ -3,6 +3,8 @@ This is the app that will allow users to keep notes per day so that we can recal
 
 To run app clone the repository:
 
+npm install
+
 cd what-did-i-do-the-other-day
 
 npm start
