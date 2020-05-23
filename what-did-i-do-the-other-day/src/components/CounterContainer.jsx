@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
 
-// *Create a counter, EX: once you click a button five times have it show a message on the screen. Showing how to manipulate state
-// *Add a button
-// *add an X button to reset the game
-// *2 states: (Int)Count, (Bool)whether or not to show the message
-
 class CounterContainer extends Component{
     render() { 
         return (
@@ -20,15 +15,12 @@ class Counter extends Component{
         count : 0
     }
     handleClick = () => {
-        this.setState((prevState, { count }) => ({
+        this.setState((prevState) => ({
           count: prevState.count + 1
         }))
       }
     handleReset = () => {
-        this.setState(count => ({
-            count : 0
-        })
-        )
+        this.setState({count : 0})
     }
     render() {
         return (

@@ -8,7 +8,6 @@ class CalendarGrid extends Component {
         return (
             <div className="App">
                 <Note />
-                <Note />
                 <CounterContainer />
             </div>
         )

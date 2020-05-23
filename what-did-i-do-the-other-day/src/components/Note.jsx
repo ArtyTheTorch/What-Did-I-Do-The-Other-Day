@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 /*TODO: 
-*Read about how to create a controlled component
-
-*Figure out how to take in text, within an textarea input (HTML)
-* - Get it set up so you can have a user input text
-* - Button that takes the text in the input and put it into an HTML tag as a DIV OR A P
-* - Hint: Your  input is a conduit for the user to write something into the state
-* - The button that you hit, needs to clear out the input & remove the text
+*Define what a Note is:
+*Title:
+*Note:
+*Time that it was created:
+*
+*When i hit submit, we create a new "note" and that note is displayed above.
+*This component is now going to be Form and it will create notes
+*Learn how to use the Map funciton with react
+*Use the map function with on of our container components.
+*Look up - Prop drilling/Passing Props down
 */
 class Note extends Component {
     constructor(props) {
@@ -15,27 +18,21 @@ class Note extends Component {
         value: '',
         labelText: ''
       };
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-      this.handleClear = this.handleClear.bind(this);
     }
   
-     handleChange(event) {
+     handleChange = (event) => {
         this.setState({value: event.target.value})
      }
   
-    handleSubmit(event) {
-        this.setState(
-            labelText => ({labelText: this.state.value})
-        )
-      event.preventDefault();
+    handleSubmit = (event) => {
+        this.setState({labelText: this.state.value})
+        event.preventDefault()
+        event.stopPropagation()
     }
 
     handleClear = (event) => {
         this.setState(
-            labelText => ({labelText : ''}),
-            value => ({value : ''})
+            {labelText: '', value: ''}
         )
         event.preventDefault();
     }
@@ -49,8 +46,7 @@ class Note extends Component {
 
                 <input type="submit" value="Submit" />
 
-                <p onChange={this.handleSubmit}>Will go here: {this.state.labelText}
-                </p>
+                <p>Will go here: {this.state.labelText}</p>
                 <button onClick={this.handleClear}>Clear
                 </button>
             </form>
