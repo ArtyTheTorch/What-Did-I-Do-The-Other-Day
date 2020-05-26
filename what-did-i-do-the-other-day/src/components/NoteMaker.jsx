@@ -51,7 +51,7 @@ class NoteMaker extends Component {
                 <p>Will go here: {this.state.labelText}</p>
                 <button onClick={this.handleClear}>Clear
                 </button>
-                <Note title = 'BAM!' />
+                {/* <Note title = 'BAM!' /> */}
             </form>
         );
     }

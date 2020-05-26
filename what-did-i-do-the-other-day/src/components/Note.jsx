@@ -9,8 +9,8 @@ class Note extends Component {
         return (
             <div className='note' class = 'note'>
                 <label class='note-title'>{this.props.title}</label>
-                <p class='note-contents'>Something in the Note</p>
-                <label class='note-time'>The time is NOW</label>
+                <p class='note-contents'>{this.props.note}</p>
+                <label class='note-time'>{this.props.time}</label>
             </div>
         )
     }
