@@ -24,6 +24,32 @@
   color: white;
 }
 
+.note {
+  background-color: aliceblue;
+  color: #282c34;
+  border: solid 5px rgb(0, 22, 41);
+  border-radius: 6px;
+  padding: calc(10px + 1vmin) calc(10px + 1vmin);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.note-title {
+  font-size: calc(10px + 1vmin);
+  font-weight: 500;
+}
+
+.note-contents {
+  font-size: calc(8px + 1vmin);
+  margin-block-start: 0em;
+  margin-block-end: .5em;
+}
+
+.note-time{
+  font-size: calc(6px + 1vmin);
+  font-style: italic;
+}
 
 @keyframes App-logo-spin {
   from {
