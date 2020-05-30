@@ -7,10 +7,10 @@ class Note extends Component {
     render()
     {
         return (
-            <div className='note' class = 'note'>
-                <label class='note-title'>{this.props.title}</label>
-                <p class='note-contents'>{this.props.note}</p>
-                <label class='note-time'>{this.props.time}</label>
+            <div className='note'>
+                <label className='note-title'>{this.props.title}</label>
+                <p className='note-contents'>{this.props.contents}</p>
+                <label className='note-time'>{this.props.time}</label>
             </div>
         )
     }

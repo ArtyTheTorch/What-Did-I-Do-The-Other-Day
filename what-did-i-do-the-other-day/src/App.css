@@ -35,6 +35,17 @@
   align-items: flex-start;
 }
 
+.note-maker {
+  background-color: #EEFFFF;
+  color: #282c34;
+  border: solid 5px rgb(0, 22, 41);
+  border-radius: 6px;
+  padding: calc(10px + 1vmin) calc(10px + 1vmin);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .note-title {
   font-size: calc(10px + 1vmin);
   font-weight: 500;

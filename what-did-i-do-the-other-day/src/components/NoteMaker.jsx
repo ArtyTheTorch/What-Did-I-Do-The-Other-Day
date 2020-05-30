@@ -11,44 +11,46 @@ import Note from './Note';
 *Learn how to use the Map funciton with react
 *Use the map function with on of our container components.
 *Look up - Prop drilling/Passing Props down
+*TIME - MomentJS
 */
 class NoteMaker extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        value: '',
-        note: '',
-        labelText: ''
+        title: '',
+        contents: '',
+        time: ''
       };
     }
   
      handleChange = (event) => {
-        this.setState({value: event.target.value})
+        this.setState({[event.target.id]: event.target.value})
+        console.log(event.target)
      }
   
-    handleSubmit = (event) => {
-        this.setState({labelText: this.state.value})
+    createNote = (event) => {
         event.preventDefault()
-        event.stopPropagation()
+        this.props.handleSubmit(this.state)
     }
 
     handleClear = (event) => {
         this.setState(
-            {labelText: '', value: ''}
+            {title: '', contents: '', time: ''}
         )
         event.preventDefault();
     }
   
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className = 'note-maker' onSubmit={this.createNote}>
                 <label>Title:
-                    <textarea value={this.state.value} onChange={this.handleChange}/>
+                    <textarea id = 'title' value={this.state.title} onChange={this.handleChange}/>
                 </label>
-
+                <label>Contents:
+                    <textarea id = 'contents' value={this.state.contents} onChange={this.handleChange}/>
+                </label>
+                {/* <textarea id = 'potato' value={this.state.potato} onChange={this.handleChange}/> */}
                 <input type="submit" value="Submit" />
-
-                <p>Will go here: {this.state.labelText}</p>
                 <button onClick={this.handleClear}>Clear
                 </button>
                 {/* <Note title = 'BAM!' /> */}
