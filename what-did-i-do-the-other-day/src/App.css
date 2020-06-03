@@ -49,6 +49,9 @@
 .note-title {
   font-size: calc(10px + 1vmin);
   font-weight: 500;
+  justify-content: space-between;
+  display: flex;
+  width: 15rem;
 }
 
 .note-contents {

@@ -17,17 +17,23 @@ class CalendarGrid extends Component {
         } )
     }
 
+    onDelete = (index) => {
+        const prevNotes = Object.assign([], this.state.notesList)
+        console.log(index)
+    }
+
     render() { 
         return (
             <div className="App">
                 { this.state.notesList.map((note, index) => {
-                    console.log(index)
-                    return <Note title = {note.title} contents = {note.contents} time = {note.time} key = {note.title + index}/>        
+                    return <Note 
+                        title={note.title}
+                        contents={note.contents}
+                        time={note.time}
+                        key={note.title + index}
+                        onDelete={() => this.onDelete(index)}/>        
                 })
                 }
-                {/* {notesList.map((comp, i) => React.createElement(comp, { key: i}))} */}
-                {/* Make a Map Function that reads over noteList that returns a Note Component */}
-                <div className="notes" onSubmit = {this.handleSubmit}>{/*notesList */}</div>
                 <NoteMaker handleSubmit = {this.handleSubmit} />
             </div>
         )
