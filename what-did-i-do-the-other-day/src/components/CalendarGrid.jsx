@@ -19,7 +19,20 @@ class CalendarGrid extends Component {
 
     onDelete = (index) => {
         const prevNotes = Object.assign([], this.state.notesList)
-        console.log(index)
+        //filter way of deleting a Note component from the Array
+        let moddifiedNotes= prevNotes.filter( function(element) {return prevNotes.indexOf(element) !== index })
+        
+        // let moddifiedNotes = []
+        // //forEach way of deleteing a Note Component from the Array
+        // prevNotes.forEach(element => {
+        //     if(prevNotes.indexOf(element) !== index) {
+        //         moddifiedNotes.push(element)
+        //     }
+        // });
+        
+        this.setState( {
+            notesList: moddifiedNotes
+        } )
     }
 
     render() { 
