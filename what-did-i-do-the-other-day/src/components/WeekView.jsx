@@ -15,9 +15,9 @@ class WeekView extends Component{
         let weekArray = []
 
         for(let i = 0; i < 5; i++) {
-            console.log(mondaysDate.add('days', i).format('MM/DD/YYYY'))
+            let thisday = moment(mondaysDate).add(i, 'days').format('MM/DD/YYYY')
             weekArray.push(
-                <div key={i}>{mondaysDate.add('days', i).format('MM/DD/YYYY')}</div> 
+                <div id={thisday} className = 'date-box' key={i}>{thisday}</div> 
             )    
         }
         this.setState({
