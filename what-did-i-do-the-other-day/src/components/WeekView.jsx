@@ -27,7 +27,7 @@ class WeekView extends Component{
     }
 
     render(){
-    return <div>
+    return <div className='date-week-view'>
         {this.state.weekArray.map(day => {
             return day;
         }) }

@@ -36,17 +36,19 @@ class CalendarGrid extends Component {
     render() { 
         return (
             <div className="App">
-                { this.state.notesList.map((note, index) => {
-                    return <Note 
-                        title={note.title}
-                        contents={note.contents}
-                        time={note.time}
-                        key={note.title + index}
-                        onDelete={() => this.onDelete(index)}/>        
-                })
-                }
-                <NoteMaker handleSubmit = {this.handleSubmit} />
                 <WeekView/>
+                <div className='input-stuff'>
+                    { this.state.notesList.map((note, index) => {
+                        return <Note 
+                            title={note.title}
+                            contents={note.contents}
+                            time={note.time}
+                            key={note.title + index}
+                            onDelete={() => this.onDelete(index)}/>        
+                    })
+                    }
+                    <NoteMaker handleSubmit = {this.handleSubmit} />
+                </div>
             </div>
         )
     }
