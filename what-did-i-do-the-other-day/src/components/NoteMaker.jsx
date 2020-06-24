@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 
-/*TODO: 
-*TIME - MomentJS
-*/
 class NoteMaker extends Component {
     constructor(props) {
       super(props);

@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
 import NoteMaker from './NoteMaker';
-import Note from './Note';
 import WeekView from './WeekView';
-
+import moment from 'moment';
 
 class CalendarGrid extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            notesList: []
+            notesList: [],
+            selectedDate: moment().format('MM/DD/YYYY')
         }
     }
 
     handleSubmit = (note) => {
+        const newNote = {...note, day: this.state.selectedDate}
         this.setState( {
-            notesList: [...this.state.notesList, note]
+            notesList: [...this.state.notesList, newNote]
         } )
     }
 
@@ -33,21 +34,19 @@ class CalendarGrid extends Component {
         } )
     }
 
+    handleSelectDate = (date) => {
+        console.log(date)
+        this.setState( {
+            selectedDate: date
+        } )
+    }
+
     render() { 
         return (
             <div className="App">
-                <WeekView/>
+                <WeekView handleSelectDate={this.handleSelectDate} selectedDate={this.state.selectedDate} notesList={this.state.notesList}/>
                 <div className='input-stuff'>
-                    { this.state.notesList.map((note, index) => {
-                        return <Note 
-                            title={note.title}
-                            contents={note.contents}
-                            time={note.time}
-                            key={note.title + index}
-                            onDelete={() => this.onDelete(index)}/>        
-                    })
-                    }
-                    <NoteMaker handleSubmit = {this.handleSubmit} />
+                   <NoteMaker handleSubmit={this.handleSubmit} />
                 </div>
             </div>
         )

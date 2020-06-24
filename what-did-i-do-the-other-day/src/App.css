@@ -70,6 +70,10 @@
   padding: calc(10px + 1vmin) calc(10px + 1vmin);
 }
 
+.today-date{
+  border: solid 5px rgb(255,0,0);
+}
+
 .input-stuff{
   display: flex;
   flex-direction: column;
